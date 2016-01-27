@@ -2,3 +2,4 @@
 *.swp
 .idea
 atlassian-ide-plugin.xml
+api-keys.yml.erb
