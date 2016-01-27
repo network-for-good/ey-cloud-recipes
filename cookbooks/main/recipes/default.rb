@@ -76,7 +76,7 @@
 #include_recipe "env-yaml"
 
 #uncomment to run the api-keys-yml recipe
-# include_recipe "api-keys-yml"
+include_recipe "api-keys-yml"
 
 #include_recipe "logrotate"
 #
