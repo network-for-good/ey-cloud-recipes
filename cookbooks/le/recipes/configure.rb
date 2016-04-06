@@ -29,10 +29,6 @@ when 'util'
     follow_paths << "/var/log/engineyard/apps/#{app_name}/#{env}.log"
   end
 when 'db_master', 'db_slave'
-  [
-    '/db/mysql/5.5/log/mysqld.err',
-    '/db/mysql/5.5/log/slow_query.log'
-  ].each { |file| follow_paths << file }
 end
 
 follow_paths.each do |path|
