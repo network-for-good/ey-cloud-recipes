@@ -20,7 +20,6 @@ when 'app', 'app_master', 'solo'
   ["/var/log/nginx/passenger.log"].each { |file| follow_paths << file }
 
   (node[:applications] || []).each do |app_name, app_info|
-    follow_paths << "/var/log/nginx/#{app_name}.access.log"
     follow_paths << "/var/log/nginx/#{app_name}.error.log"
     follow_paths << "/var/log/engineyard/apps/#{app_name}/#{env}.log"
   end
