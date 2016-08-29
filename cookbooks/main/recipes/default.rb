@@ -14,7 +14,7 @@
 # include_recipe "thinking-sphinx-3"
 
 # uncomment to use the collectd recipe. See cookbooks/collectd/readme.md for documentation.
-# include_recipe "collectd"
+include_recipe "collectd"
 
 # uncomment to use the block recipe. See cookbooks/block/readme.md for documentation.
 # include_recipe "ban"
