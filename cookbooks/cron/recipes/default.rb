@@ -20,13 +20,17 @@ crons.each do |cron|
   end
 end
 
-case node[:instance_role]
-when 'util', 'solo'
+files = {
+  'clean_rails_cache_dir.sh' => '/etc/cron.daily',
+}
+
+files.each do |template_name, destination_dir|
   node[:applications].keys.each do |app_name|
-    template '/etc/cron.daily/clean_rails_cache_dir.sh' do
-      source 'clean_rails_cache_dir.sh.erb'
+    template "#{destination_dir}/#{template_name}" do
+      source "#{template_name}.erb"
       variables({
-        app_dir: "/data/#{app_name}/shared/tmp/cache"
+        app_dir: "/data/#{app_name}/shared/tmp/cache",
+        environment: node[:environment][:framework_env]
       })
       mode '0755'
     end
