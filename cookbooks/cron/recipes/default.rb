@@ -22,6 +22,7 @@ end
 
 files = {
   'clean_rails_cache_dir.sh' => '/etc/cron.daily',
+  'clean_tmp_dir.sh' => '/etc/cron.daily',
 }
 
 files.each do |template_name, destination_dir|
