@@ -5,7 +5,7 @@
 
 case node[:instance_role]
 when 'util'
-  load_thresholds = { :warning => 11111111111111111111, :failure => 15 }
+  load_thresholds = { :warning => 9, :failure => 15 }
 else
   load_thresholds = { :warning => 8, :failure => 10 }
 end
