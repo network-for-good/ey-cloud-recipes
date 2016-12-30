@@ -31,6 +31,7 @@ files.each do |template_name, destination_dir|
       source "#{template_name}.erb"
       variables({
         app_dir: "/data/#{app_name}/shared/tmp/cache",
+        roo_dir: "/data/#{app_name}/shared/tmp/roo",
         environment: node[:environment][:framework_env]
       })
       mode '0755'

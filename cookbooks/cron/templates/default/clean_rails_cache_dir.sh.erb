@@ -1,6 +1,11 @@
 #!/bin/sh
 
 APP_DIR=<%= @app_dir %>
-if [ -d "${APP_DIR:-NULL}" ]; then
-  find $APP_DIR -type f -mtime +7 -not -path "*/assets/*" -print -delete
-fi
+ROO_DIR=<%= @roo_dir %>
+
+dirs=($APP_DIR $ROO_DIR)
+for d in $dirs; do
+  if [ -d "${d:-NULL}" ]; then
+    find $d -type f -mtime +7 -not -path "*/assets/*" -print -delete
+  fi
+done
