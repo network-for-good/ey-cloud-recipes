@@ -177,4 +177,7 @@ include_recipe "api-keys-yml"
 #include_recipe "env_motd"
 
 include_recipe "delayed_job"
-include_recipe "le"
+
+unless node[:environment][:framework_env] == 'qa'
+  include_recipe "le"
+end
