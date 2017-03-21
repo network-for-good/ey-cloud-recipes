@@ -178,6 +178,6 @@ include_recipe "api-keys-yml"
 
 include_recipe "delayed_job"
 
-unless node[:environment][:framework_env] == 'qa'
+if node[:environment][:framework_env] == 'production'
   include_recipe "le"
 end
