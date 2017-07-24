@@ -123,6 +123,8 @@ include_recipe "api-keys-yml"
 # uncomment to include the Postgres Maintenance recipe
 include_recipe "postgresql_maintenance"
 
+include_recipe "postgresql_readonly_user"
+
 #enable Extension modules for a given Postgresql database
 # if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # Extensions that support Postgres >= 9.0
