@@ -10,6 +10,7 @@ database_name = app['database_name']
 database_username = 'postgres'
 database_password = app['database_password']
 sql = <<-EOL
+DROP OWNED BY #{reporting_user};
 DROP ROLE IF EXISTS #{reporting_user};
 CREATE ROLE #{reporting_user} LOGIN PASSWORD '!0QpalKsow92';
 GRANT CONNECT ON DATABASE #{database_name} TO #{reporting_user};
