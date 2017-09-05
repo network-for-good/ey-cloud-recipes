@@ -13,7 +13,8 @@ if node[:instance_role] == "solo" || (node[:instance_role] == "util" && node[:na
       case node[:ec2][:instance_type]
       when 'm1.small' then worker_count = 2
       when 'c1.medium' then worker_count = 4
-      when 'c1.xlarge','m3.large' then worker_count = 8
+      when 'c1.xlarge','m3.large', 'c3.xlarge' then worker_count = 8
+      when 'c3.2xlarge' then worker_count = 12
       else
         worker_count = 2
       end
