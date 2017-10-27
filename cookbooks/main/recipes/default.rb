@@ -125,6 +125,10 @@ include_recipe "postgresql_maintenance"
 
 include_recipe "postgresql_readonly_user"
 
+include_recipe "passenger_monitor"
+
+include_recipe "rubygems-update"
+
 #enable Extension modules for a given Postgresql database
 # if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # Extensions that support Postgres >= 9.0
