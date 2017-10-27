@@ -29,6 +29,7 @@ end
 
 follow_paths = [
   "/var/log/syslog",
+  "/var/log/engineyard/apps/#{node[:applications].keys.first}/#{env}_activejob.log"
 ]
 
 case node[:instance_role]
@@ -48,8 +49,8 @@ end
 
 follow_paths.each do |path|
   execute "le follow #{path}" do
-    command "le follow #{path}; true"
-    ignore_failure true
+    command "le follow #{path}"
+    ignore_failure false
     action :run
   end
 end
