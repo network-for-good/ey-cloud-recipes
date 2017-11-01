@@ -183,6 +183,7 @@ include_recipe "rubygems-update"
 #include_recipe "env_motd"
 
 include_recipe "delayed_job"
+include_recipe "timezone"
 
 if node[:environment][:framework_env] == 'production'
   include_recipe "le"
